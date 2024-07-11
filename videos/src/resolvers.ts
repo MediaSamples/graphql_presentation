@@ -3,7 +3,7 @@ import { Video, videos } from "./repository.js";
 const resolvers = {
   Query: {
     getVideos: () => {
-      videos;
+      return videos;
     },
     getVideo: (_: any, { id }: { id: string }) => {
       console.log("Query.getVideo", id);
