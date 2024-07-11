@@ -15,12 +15,6 @@ const resolvers = {
       console.log("User.__resolveReference", user);
       return users.find((u) => u.id === +user.id);
     },
-    posts: (user: User) => {
-      console.log("User.posts", user);
-      return {
-        author: user,
-      };
-    },
   },
 };
 

@@ -1,4 +1,10 @@
+import DataLoader from "dataloader";
 import { Article, articles } from "./repository.js";
+
+const loadArticlesByUserIds = new DataLoader<number, Article[]>(async userIds => {
+  console.log("LoadArticlesByUserIds", userIds);
+  return userIds.map(id => articles.filter(p => p.author === id));
+})
 
 const resolvers = {
   Query: {
@@ -9,7 +15,7 @@ const resolvers = {
   User: {
     posts: (user: { id: number }) => {
       console.log("User.articles", user);
-      return articles.filter((p) => p.author === +user.id);
+      return loadArticlesByUserIds.load(user.id);
     },
   },
   Post: {
