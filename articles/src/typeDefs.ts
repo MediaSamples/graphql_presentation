@@ -6,17 +6,17 @@ export const typeDefs = gql`
 
   type User @key(fields: "id") {
     id: ID!
-    posts: [Post!]
+    articles: [Article!]
   }
 
-  type Post {
+  type Article {
     id: ID!
     url: String!
     author: User!
   }
 
   type Query {
-    getPosts: [Post!]
-    getPost(id: ID!): Post
+    getArticles: [Article!]
+    getArticle(id: ID!): Article
   }
 `;
