@@ -3,7 +3,6 @@ export type User = {
   firstName: string;
   lastName: string;
   dateOfBirth: string;
-  followers: number[];
 };
 
 export const users: User[] = [
@@ -11,14 +10,12 @@ export const users: User[] = [
     id: 1,
     firstName: "John",
     lastName: "Doe",
-    dateOfBirth: "2000-01-01",
-    followers: [2],
+    dateOfBirth: "1991-02-21",
   },
   {
     id: 2,
     firstName: "Bob",
     lastName: "Doe",
-    dateOfBirth: "2000-01-01",
-    followers: [1],
+    dateOfBirth: "2000-09-04",
   },
 ];

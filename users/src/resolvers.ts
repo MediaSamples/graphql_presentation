@@ -3,7 +3,7 @@ import { User, users } from "./repository.js";
 const resolvers = {
   Query: {
     getUsers: () => {
-      users;
+      return users;
     },
     getUser: (_: any, { id }: { id: string }) => {
       console.log("Query.getUser", id);
